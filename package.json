@@ -1,0 +1,19 @@
+{
+  "name": "perle-qa-bot",
+  "version": "1.0.0",
+  "description": "Dual-platform Q&A bot for Perle Labs (Discord + Telegram)",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "telegraf": "^4.16.3",
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "twitter-api-v2": "^1.15.2",
+    "sqlite3": "^5.1.6",
+    "dotenv": "^16.4.1"
+  }
+}

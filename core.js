@@ -88,11 +88,6 @@ async function fetchPerleSources() {
   return results.filter(Boolean).slice(0, 5).join("\n\n");
 }
 
-async function searchX(query) {
-  // X / Twitter search intentionally disabled
-  return "";
-}
-
 
 /* -------------------- GROK -------------------- */
 
@@ -189,4 +184,5 @@ module.exports = {
   getAnswer,
   storeRating
 };
+
 

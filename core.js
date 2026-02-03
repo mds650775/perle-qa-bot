@@ -128,10 +128,9 @@ async function getAnswer(question) {
   }
 
   // Fetch official data
-  const [sources, tweets] = await Promise.all([
-    fetchPerleSources(),
-    searchX(q)
-  ]);
+const sources = await fetchPerleSources();
+const tweets = ""; // Twitter search disabled
+
 
   const prompt = `
 You are the official Perle Labs Q&A Bot.
@@ -184,5 +183,6 @@ module.exports = {
   getAnswer,
   storeRating
 };
+
 
 

@@ -89,24 +89,10 @@ async function fetchPerleSources() {
 }
 
 async function searchX(query) {
-  if (!CONFIG.TWITTER_BEARER) return "";
-
-  try {
-    const client = new TwitterApi({
-      bearerToken: CONFIG.TWITTER_BEARER
-    });
-
-    const res = await client.v2.search(`${query} from:PerleLabs`, {
-      max_results: 5,
-      sort_order: "recency"
-    });
-
-    if (!res.data?.data) return "";
-    return res.data.data.map(t => t.text).join("\n");
-  } catch {
-    return "";
-  }
+  // X / Twitter search intentionally disabled
+  return "";
 }
+
 
 /* -------------------- GROK -------------------- */
 
@@ -203,3 +189,4 @@ module.exports = {
   getAnswer,
   storeRating
 };
+

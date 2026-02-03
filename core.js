@@ -93,7 +93,7 @@ async function fetchPerleSources() {
 
 async function callGrok(prompt) {
   const res = await axios.post(
-    CONFIG.GROK_API_URL,
+    CONFIG.OPENROUTER_API_URL,
     {
       model: "x-ai/grok-4.1-fast",
       messages: [{ role: "user", content: prompt }],
@@ -101,7 +101,7 @@ async function callGrok(prompt) {
     },
     {
       headers: {
-        Authorization: `Bearer ${CONFIG.GROK_API_KEY}`,
+        Authorization: `Bearer ${CONFIG.OPENROUTER_API_KEY}`,
         "Content-Type": "application/json",
         "HTTP-Referer": "https://github.com/yourusername/perle-qa-bot",
         "X-Title": "Perle Q&A Bot by @mds650775_2"
@@ -183,6 +183,7 @@ module.exports = {
   getAnswer,
   storeRating
 };
+
 
 
 

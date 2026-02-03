@@ -122,21 +122,20 @@ async function getAnswer(question) {
     return "Hey 👋 I’m the Perle Labs bot. Ask me anything about Perle Labs.";
   }
 
-  // Off-topic
-  if (isOffTopic(q)) {
+  // If NOT about Perle → joke
+  if (!q.includes("perle")) {
     return randomJoke();
   }
 
   // Fetch official data
-const sources = await fetchPerleSources();
-const tweets = ""; // Twitter search disabled
-
+  const sources = await fetchPerleSources();
+  const tweets = ""; // Twitter search disabled
 
   const prompt = `
 You are the official Perle Labs Q&A Bot.
 
 IMPORTANT IDENTITY:
-Perle Labs refers ONLY to the crypto/Web3 project associated with:
+Perle Labs refers ONLY to the crypto/web3 project associated with:
 - Website: https://www.perle.xyz
 - X (Twitter): @PerleLabs
 - Blog: https://www.perle.xyz/blog
@@ -164,12 +163,14 @@ ${question}
     const raw = await callGrok(prompt);
     return (
       cleanOutput(raw) +
-      "\n\n— Insights powered by X - @mds650775_2 & Dc - @mds650775 – Perle contributor"
+      "\n\n— Insights powered by x · @mds650775_2 & Dc · @mds650775 · Perle contributor"
     );
   } catch (e) {
+    console.error("AI error:", e.response?.data || e.message);
     return "Something went wrong. Please try again later.";
   }
 }
+
 
 /* -------------------- FEEDBACK -------------------- */
 
@@ -183,6 +184,7 @@ module.exports = {
   getAnswer,
   storeRating
 };
+
 
 
 

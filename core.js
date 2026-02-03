@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 const { TwitterApi } = require("twitter-api-v2");
-const { CONFIG } = require("./config");
+const CONFIG = require("./config");
 const { saveFeedback } = require("./db");
 
 /* -------------------- HELPERS -------------------- */
@@ -184,6 +184,7 @@ module.exports = {
   getAnswer,
   storeRating
 };
+
 
 
 

@@ -103,7 +103,7 @@ async function callGrok(prompt) {
       headers: {
         Authorization: `Bearer ${CONFIG.OPENROUTER_API_KEY}`,
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://github.com/yourusername/perle-qa-bot",
+        "HTTP-Referer": "https://github.com/mds650775/perle-qa-bot",
         "X-Title": "Perle Q&A Bot by @mds650775_2"
       }
     }
@@ -183,6 +183,7 @@ module.exports = {
   getAnswer,
   storeRating
 };
+
 
 
 
